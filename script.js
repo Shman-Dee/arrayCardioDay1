@@ -116,10 +116,10 @@ console.table(oldest);
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-const alpha = people.sort(function (lastOne, nextOne) {
+const alpha = people.sort((lastOne, nextOne) => {
   const [aLast, aFirst] = lastOne.split(", ");
   const [bLast, bFirst] = nextOne.split(", ");
-  return aLast > bLast ? -1 : 1;
+  return aLast > bLast ? 1 : -1;
 });
 console.log(alpha);
 // 7. sort Exercise
@@ -143,3 +143,7 @@ const data = [
   "car",
   "truck",
 ];
+
+const transportation = data.reduce(function (obj, item) {
+  console.log(item);
+});
